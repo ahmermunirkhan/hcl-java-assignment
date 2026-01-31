@@ -7,6 +7,8 @@ public interface WarehouseStore {
 
   List<Warehouse> getAll();
 
+  List<Warehouse> getAllByLocation(String location);
+
   void create(Warehouse warehouse);
 
   void update(Warehouse warehouse);

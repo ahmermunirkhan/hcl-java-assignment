@@ -52,9 +52,11 @@ public class StoreResource {
     if (store.id != null) {
       throw new WebApplicationException("Id was invalidly set on request.", 422);
     }
-
-    store.persist();
-
+    try {
+      store.persist();
+    }catch (Exception e) {
+      throw new WebApplicationException("Unable to create Store, please see error message: " + e.getMessage(), 500);
+    }
     legacyStoreManagerGateway.createStoreOnLegacySystem(store);
 
     return Response.ok(store).status(201).build();

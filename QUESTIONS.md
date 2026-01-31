@@ -19,6 +19,6 @@ Here we have 3 questions related to the code base for you to answer. It is not a
 3. Given the need to balance thorough testing with time and resource constraints, how would you prioritize and implement tests for this project? Which types of tests would you focus on, and how would you ensure test coverage remains effective over time?
 
 **Answer:**
-```txt
-
-```
+Core business logic (workflows, validation and contraints)
+Data persistence (repositories and storing use case)
+Controller actions which are exposed to frontend

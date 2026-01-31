@@ -1,5 +1,6 @@
 package com.fulfilment.application.monolith.warehouses.adapters.database;
 
+import com.aayushatharva.brotli4j.common.annotations.Local;
 import com.fulfilment.application.monolith.warehouses.domain.models.Warehouse;
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
@@ -38,5 +39,14 @@ public class DbWarehouse {
     warehouse.createdAt = this.createdAt;
     warehouse.archivedAt = this.archivedAt;
     return warehouse;
+  }
+
+  public DbWarehouse(Warehouse warehouse){
+    this.businessUnitCode = warehouse.businessUnitCode;
+    this.location = warehouse.location;
+    this.capacity = warehouse.capacity;
+    this.stock = warehouse.stock;
+    this.createdAt = LocalDateTime.now();
+    this.archivedAt = null;
   }
 }
